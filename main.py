@@ -53,7 +53,7 @@ async def on_message(message):
 				'__cfduid' : r.cookies['__cfduid'],
 			}
 
-			r = requests.post(getuser, headers=headers, cookies=cookies, data='{"recipient_id":"'+userid'"}')
+			r = requests.post(getuser, headers=headers, cookies=cookies, data='{"recipient_id":"'+userid+'"}')
 			data = json.loads(r.text)
 			sendmsg = requests.post(dmuser + data['id'] + "/messages", headers=headers, cookies=cookies, data='{"content": "'+messagecontent+'"}')
 
